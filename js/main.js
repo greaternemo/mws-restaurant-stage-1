@@ -121,8 +121,8 @@ updateRestaurants = () => {
       resetRestaurants(restaurants);
       fillRestaurantsHTML();
     }
-  })
-}
+  });
+};
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
@@ -130,7 +130,7 @@ updateRestaurants = () => {
 resetRestaurants = (restaurants) => {
   // Remove all restaurants
   self.restaurants = [];
-  const ul = document.getElementById('restaurants-list');
+  const ul = document.querySelector('.list-view .vendor-list');
   ul.innerHTML = '';
 
   // Remove all map markers
@@ -145,7 +145,7 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
-  const ul = document.getElementById('restaurants-list');
+  const ul = document.querySelector('.list-view .vendor-list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
   });
@@ -157,9 +157,10 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.classList.add('styled-box-view');
 
   const image = document.createElement('img');
-  image.className = 'restaurant-img';
+  image.className = 'vendor-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -178,9 +179,9 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
-  li.append(more)
+  li.append(more);
 
-  return li
+  return li;
 }
 
 /**
@@ -196,8 +197,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     }
     self.markers.push(marker);
   });
-
-} 
+};
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map
