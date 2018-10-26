@@ -45,6 +45,10 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+a:focus {
+  outline: solid orange;
+}
+
 a img {
   border: none 0px #fff;
 }
@@ -245,6 +249,16 @@ h6 {
   z-index: 999;
 }
 
+.page-body .page-main .map-view .map.leaflet-container .leaflet-marker-pane .leaflet-marker-icon:focus {
+  outline: solid orange;
+}
+
+.page-body .page-main .map-view .map.leaflet-container .leaflet-control-attribution a {
+  /*color: #252831;*/
+  color: #252831;
+  text-decoration: underline;
+}
+
 
 
 /*  .page-body .page-main .primary-view  */
@@ -263,7 +277,6 @@ h6 {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /*margin: 20px auto;*/
   margin: 20px 0;
   width: 100%;
 }
@@ -283,6 +296,7 @@ h6 {
 .page-body .standard-main .primary-view .filter-view {
   align-items: center;
   background-color: #3397DB;
+  /*background-color: #252831;*/
   height: 80px;
   width: 100%;
 }
@@ -320,6 +334,11 @@ h6 {
   padding: 0 10px;
   width: 90%;
 }
+
+.page-body .standard-main .primary-view .filter-view .options-view select:focus {
+  outline: solid orange;
+}
+
 
 
 
@@ -361,11 +380,12 @@ h6 {
 }
 
 .page-body .standard-main .primary-view .list-view li a {
-  background-color: orange;
+  background-color: #444;
   border-radius: 0 0 20px 0;
-  color: #fff;
+  color: orange;
   display: inline-block;
   font-size: 16px;
+  font-weight: bold;
   margin: 0;
   text-align: center;
   text-decoration: none;
@@ -391,7 +411,7 @@ h6 {
 .page-body .vendor-main .primary-view .info-view .vendor-name {
   color: #f18200;
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 0;
   line-height: 1.1;
   margin: 30px 0;
@@ -451,9 +471,9 @@ h6 {
 
 .page-body .vendor-main .primary-view .list-view h2 {
   color: #f58500;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
-  letter-spacing: -1px;
+  /*letter-spacing: -1px;*/
   padding-bottom: 1pt;
 }
 
@@ -544,7 +564,8 @@ h6 {
   background-color: #444;
   bottom: 0;
   box-sizing: border-box;
-  color: #aaa;
+  /*color: #aaa;*/
+  color: #eee;
   font-size: 16px;
   letter-spacing: 1px;
   padding: 15px;
