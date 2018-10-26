@@ -17,15 +17,24 @@
     <h1>Restaurant Reviews</h1>
 
     <nav class="page-nav">
-      <ul id="breadcrumb" class="breadcrumb">
+      <ul id="breadcrumb" class="breadcrumb" aria-label='Breadcrumb'>
         <li><a href="/">Home</a></li>
+        <!-- The second breadcrumb link is built dynamically in restaurant_info.js -->
       </ul>
     </nav>
   </header>
 
   <main id="maincontent" class="page-main vendor-main">
     <section id="map-view" class="map-view">
-      <div id="map" class="map"></div>
+      <!--
+      Okay, look.
+      Since this page uses Leaflet.js to populate the map on page load, things like this explicit tabindex
+      are going to be overwritten. To combat this, I'm using a function called detabify in js/util.js to
+      dynamically add tabindex='-1' and aria-hidden="true" to the map pane and all of its descendants.
+      This is in accordance with the first round of code review feedback I got, which explicitly said to
+      remove the map from the tab order. If this isn't the right way to do this, I need clearer feedback.
+      -->
+      <div id="map" class="map" aria-role='application' aria-hidden='true' tabindex='-1'></div>
     </section>
 
     <section class="primary-view">
