@@ -9,6 +9,7 @@
     window.addEventListener('load', function() {
       navigator.serviceWorker.register('/sw.js').then(function() {
         clog("client: Successfully registered service worker!");
+        util.detabify(document.querySelector('.map'));
       }, function() {
         clog("client: Failed to register service worker!");
       });

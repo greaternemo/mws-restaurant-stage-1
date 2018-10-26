@@ -150,6 +150,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
     ul.append(createRestaurantHTML(restaurant));
   });
   addMarkersToMap();
+  util.detabify(document.querySelector('.map'));
 };
 
 /**
@@ -165,7 +166,7 @@ createRestaurantHTML = (restaurant) => {
   util.addImgAlt(image);
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 

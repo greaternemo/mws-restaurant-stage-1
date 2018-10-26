@@ -369,7 +369,7 @@ h6 {
   min-width: 100%;
 }
 
-.page-body .standard-main .primary-view .list-view li h1 {
+.page-body .standard-main .primary-view .list-view li h2 {
   color: #f18200;
   font-size: 24px;
   font-weight: 200;
@@ -648,7 +648,7 @@ html,
       font-size: 14px;
     }
 
-    .page-body .standard-main .primary-view .list-view li h1 {
+    .page-body .standard-main .primary-view .list-view li h2 {
       font-size: 18px;
     }
     
@@ -686,7 +686,7 @@ html,
       font-size: 12px;
     }
 
-    .page-body .standard-main .primary-view .list-view li h1 {
+    .page-body .standard-main .primary-view .list-view li h2 {
       font-size: 18px;
     }
     

@@ -26,3 +26,26 @@ util.addImgAlt = function (img) {
     }
   }
 };
+
+/* detabify recurses over a single element and all of its children
+ * AND ITS CHILDREN'S CHILDREN
+ * AND ITS CHILDREN'S CHILDREN'S CHILDREN
+ * and it sets an explicit negative tabIndex for anything that
+ * has a non-negative tabIndex.
+ * This is basically meant to remove the map and all of its markers
+ * from the page's tab order.
+ */
+
+util.detabify = function(target) {
+  if (target.tabIndex != -1) {
+    target.tabIndex = -1;
+    target.setAttribute('aria-hidden', 'true');
+  }
+  if (target.hasChildNodes()) {
+    target.childNodes.forEach(function(child) {
+      if (child.nodeType == Node.ELEMENT_NODE) {
+        util.detabify(child);
+      }
+    });
+  }
+};
